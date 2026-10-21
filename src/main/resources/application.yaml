@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: discovery
+  threads:
+    virtual:
+      enabled: true
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: discovery
+  client:
+    register-with-eureka: ${register-with-eureka}
+    fetch-registry: ${fetch-registry}
+    service-url:
+      defaultZone: ${eureka.client.service-url.defaultZone}
+logging:
+  level:
+    com.netflix.eureka.resources.InstanceResource: DEBUG
+    com.netflix.eureka: DEBUG
+    com.netflix.discovery: DEBUG
